@@ -1,0 +1,11 @@
+# 将来Git管理する場合のローカル生成物。
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+build/
+.env
+.env.local
+networks/private/**/runtime/
+networks/private/**/secrets/
+artifacts/poc/*/

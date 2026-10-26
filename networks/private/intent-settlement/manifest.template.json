@@ -1,0 +1,62 @@
+{
+  "schema": "symbol-poc-network-design-template-v1",
+  "status": "DRAFT_NOT_RUN",
+  "runnable": false,
+  "scheme": "intent-settlement",
+  "upstreamBaseline": "6c04695555230c89a6ffa2ac4d41774dcac77ae3",
+  "implementationCommit": null,
+  "implementationDiffSha256": null,
+  "network": {
+    "identifier": null,
+    "generationHashSeed": null,
+    "epoch": null,
+    "currencyMosaicId": null,
+    "genesisHash": null,
+    "publicPeersAllowed": false
+  },
+  "abi": {
+    "entityTypes": null,
+    "facilityCode": null,
+    "notificationIds": null,
+    "intentConsumptionCacheId": null
+  },
+  "proposalsNotNativeConfig": {
+    "activationHeight": "2",
+    "TotalVotingBalanceCalculationFix": "1",
+    "StrictAggregateTransactionHash": "1",
+    "UniqueAggregateTransactionHash": "1"
+  },
+  "nativeConfigMappingVerified": false,
+  "pluginBinarySha256": null,
+  "nodes": [
+    {
+      "name": "node-1",
+      "peerEndpoint": null,
+      "apiEndpoint": null,
+      "publicKey": null,
+      "dataDirectory": null,
+      "configSha256": null
+    },
+    {
+      "name": "node-2",
+      "peerEndpoint": null,
+      "apiEndpoint": null,
+      "publicKey": null,
+      "dataDirectory": null,
+      "configSha256": null
+    },
+    {
+      "name": "node-3",
+      "peerEndpoint": null,
+      "apiEndpoint": null,
+      "publicKey": null,
+      "dataDirectory": null,
+      "configSha256": null
+    }
+  ],
+  "evidence": {
+    "genesisAgreement": "NOT_RUN",
+    "notificationOrder": "NOT_RUN",
+    "threeNodeAcceptance": "NOT_RUN"
+  }
+}

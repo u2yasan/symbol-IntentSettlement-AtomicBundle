@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="520" height="700" preserveAspectRatio="xMinYMin meet" viewBox="0 0 520 700" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>atomic-bundle PoC 構造図</title>
+	<desc>実装前の設計仕様。認可、原子的な資産移動、消費状態、失敗時とreorg時の扱いを示す。</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="520" height="700"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-700)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="520" height="700" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="8" y="149" width="504" height="245" rx="10" ry="10" style="stroke: rgb(83%,87%,90%); stroke-linecap: butt; stroke-width: 1; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<rect x="20" y="632" width="220" height="48" rx="7" ry="7" style="stroke: rgb(14%,41%,60%); stroke-linecap: butt; stroke-width: 1.1; fill: rgb(95%,96%,98%); fill-rule: evenodd;"/>
+			<text x="61.26100000000001" y="652.04" style="font-family: 'Noto Sans JP', 'Hiragino Sans', Meiryo, sans-serif; font-weight: 700; font-size: 11px;fill: rgb(14%,20%,27%); stroke:none;" transform="translate(0,1304) scale(1,-1)">メイカー: legacy注文へ署名</text>
+			<rect x="280" y="632" width="220" height="48" rx="7" ry="7" style="stroke: rgb(14%,41%,60%); stroke-linecap: butt; stroke-width: 1.1; fill: rgb(95%,96%,98%); fill-rule: evenodd;"/>
+			<text x="332.23900000000003" y="652.04" style="font-family: 'Noto Sans JP', 'Hiragino Sans', Meiryo, sans-serif; font-weight: 700; font-size: 11px;fill: rgb(14%,20%,27%); stroke:none;" transform="translate(0,1304) scale(1,-1)">在庫鍵: 外側全体へ署名</text>
+			<path d="M 130,632 L 130,612 Z" style="stroke: rgb(14%,41%,60%); stroke-linecap: butt; stroke-width: 1.4;"/>
+			<polygon points="130 612, 133 618, 127 618" style="stroke: rgb(14%,41%,60%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,41%,60%); fill-rule: evenodd;"/>
+			<rect x="20" y="562" width="220" height="50" rx="7" ry="7" style="stroke: rgb(14%,41%,60%); stroke-linecap: butt; stroke-width: 1.1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="65.186" y="582.86" style="font-family: 'Noto Sans JP', 'Hiragino Sans', Meiryo, sans-serif; font-size: 11.5px;fill: rgb(14%,20%,27%); stroke:none;" transform="translate(0,1165) scale(1,-1)">固定形の売却・受取・tip</text>
+			<rect x="280" y="562" width="220" height="50" rx="7" ry="7" style="stroke: rgb(14%,41%,60%); stroke-linecap: butt; stroke-width: 1.1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="313.01925" y="583.22" style="font-family: 'Noto Sans JP', 'Hiragino Sans', Meiryo, sans-serif; font-size: 10.5px;fill: rgb(14%,20%,27%); stroke:none;" transform="translate(0,1166) scale(1,-1)">P鍵: legacyとouterを別々に連署</text>
+			<path d="M 500,656 L 510,656 Z" style="stroke: rgb(14%,41%,60%); stroke-linecap: butt; stroke-width: 1.4;"/>
+			<path d="M 510,656 L 510,507 Z" style="stroke: rgb(14%,41%,60%); stroke-linecap: butt; stroke-width: 1.4;"/>
+			<path d="M 510,507 L 415,507 Z" style="stroke: rgb(14%,41%,60%); stroke-linecap: butt; stroke-width: 1.4;"/>
+			<polygon points="415 507, 421 504, 421 510" style="stroke: rgb(14%,41%,60%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,41%,60%); fill-rule: evenodd;"/>
+			<path d="M 130,562 L 205,535 Z" style="stroke: rgb(14%,41%,60%); stroke-linecap: butt; stroke-width: 1.4;"/>
+			<polygon points="205 535, 200.3708 539.855, 198.3385 534.2097" style="stroke: rgb(14%,41%,60%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,41%,60%); fill-rule: evenodd;"/>
+			<path d="M 390,562 L 315,535 Z" style="stroke: rgb(14%,41%,60%); stroke-linecap: butt; stroke-width: 1.4;"/>
+			<polygon points="315 535, 321.6615 534.2097, 319.6292 539.855" style="stroke: rgb(14%,41%,60%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,41%,60%); fill-rule: evenodd;"/>
+			<rect x="105" y="479" width="310" height="56" rx="7" ry="7" style="stroke: rgb(3%,48%,48%); stroke-linecap: butt; stroke-width: 1.1; fill: rgb(90%,95%,96%); fill-rule: evenodd;"/>
+			<text x="183.341" y="511.485" style="font-family: 'Noto Sans JP', 'Hiragino Sans', Meiryo, sans-serif; font-weight: 700; font-size: 11.5px;fill: rgb(14%,20%,27%); stroke:none;" transform="translate(0,1022) scale(1,-1)">ソルバーがBundleを組み立て</text>
+			<text x="192.541" y="494.235" style="font-family: 'Noto Sans JP', 'Hiragino Sans', Meiryo, sans-serif; font-weight: 700; font-size: 11.5px;fill: rgb(14%,20%,27%); stroke:none;" transform="translate(0,988) scale(1,-1)">外側認証とcanonical root</text>
+			<path d="M 260,479 L 260,455 Z" style="stroke: rgb(14%,41%,60%); stroke-linecap: butt; stroke-width: 1.4;"/>
+			<polygon points="260 455, 263 461, 257 461" style="stroke: rgb(14%,41%,60%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,41%,60%); fill-rule: evenodd;"/>
+			<rect x="105" y="407" width="310" height="48" rx="7" ry="7" style="stroke: rgb(14%,41%,60%); stroke-linecap: butt; stroke-width: 1.1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="188.0" y="426.68" style="font-family: 'Noto Sans JP', 'Hiragino Sans', Meiryo, sans-serif; font-size: 12px;fill: rgb(14%,20%,27%); stroke:none;" transform="translate(0,853) scale(1,-1)">完全検証・期限・状態制限</text>
+			<path d="M 260,407 L 260,383 Z" style="stroke: rgb(14%,41%,60%); stroke-linecap: butt; stroke-width: 1.4;"/>
+			<polygon points="260 383, 263 389, 257 389" style="stroke: rgb(14%,41%,60%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,41%,60%); fill-rule: evenodd;"/>
+			<rect x="105" y="335" width="310" height="48" rx="7" ry="7" style="stroke: rgb(14%,41%,60%); stroke-linecap: butt; stroke-width: 1.1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="167.46620000000001" y="354.896" style="font-family: 'Noto Sans JP', 'Hiragino Sans', Meiryo, sans-serif; font-size: 11.4px;fill: rgb(14%,20%,27%); stroke:none;" transform="translate(0,709) scale(1,-1)">共有HashCacheでlegacy消費を確認</text>
+			<path d="M 260,335 L 80,307 Z" style="stroke: rgb(14%,41%,60%); stroke-linecap: butt; stroke-width: 1.4;"/>
+			<polygon points="80 307, 86.38982 304.9579, 85.46758 310.8866" style="stroke: rgb(14%,41%,60%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,41%,60%); fill-rule: evenodd;"/>
+			<rect x="20" y="247" width="120" height="60" rx="7" ry="7" style="stroke: rgb(14%,41%,60%); stroke-linecap: butt; stroke-width: 1.1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="59.4173" y="281.446" style="font-family: 'Noto Sans JP', 'Hiragino Sans', Meiryo, sans-serif; font-size: 11.4px;fill: rgb(14%,20%,27%); stroke:none;" transform="translate(0,562) scale(1,-1)">funding</text>
+			<text x="56.738299999999995" y="264.346" style="font-family: 'Noto Sans JP', 'Hiragino Sans', Meiryo, sans-serif; font-size: 11.4px;fill: rgb(14%,20%,27%); stroke:none;" transform="translate(0,528) scale(1,-1)">在庫 → P</text>
+			<rect x="200" y="247" width="120" height="60" rx="7" ry="7" style="stroke: rgb(3%,48%,48%); stroke-linecap: butt; stroke-width: 1.1; fill: rgb(90%,95%,96%); fill-rule: evenodd;"/>
+			<text x="233.2714" y="281.173" style="font-family: 'Noto Sans JP', 'Hiragino Sans', Meiryo, sans-serif; font-size: 10.7px;fill: rgb(14%,20%,27%); stroke:none;" transform="translate(0,562) scale(1,-1)">legacy注文</text>
+			<text x="217.735" y="265.123" style="font-family: 'Noto Sans JP', 'Hiragino Sans', Meiryo, sans-serif; font-size: 10.7px;fill: rgb(14%,20%,27%); stroke:none;" transform="translate(0,530) scale(1,-1)">native規則で交換</text>
+			<rect x="380" y="247" width="120" height="60" rx="7" ry="7" style="stroke: rgb(14%,41%,60%); stroke-linecap: butt; stroke-width: 1.1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="423.511" y="281.29" style="font-family: 'Noto Sans JP', 'Hiragino Sans', Meiryo, sans-serif; font-size: 11px;fill: rgb(14%,20%,27%); stroke:none;" transform="translate(0,562) scale(1,-1)">sweep</text>
+			<text x="407.0" y="264.79" style="font-family: 'Noto Sans JP', 'Hiragino Sans', Meiryo, sans-serif; font-size: 11px;fill: rgb(14%,20%,27%); stroke:none;" transform="translate(0,529) scale(1,-1)">増分を在庫へ</text>
+			<path d="M 140,277 L 200,277 Z" style="stroke: rgb(14%,41%,60%); stroke-linecap: butt; stroke-width: 1.4;"/>
+			<polygon points="200 277, 194 280, 194 274" style="stroke: rgb(14%,41%,60%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,41%,60%); fill-rule: evenodd;"/>
+			<path d="M 320,277 L 380,277 Z" style="stroke: rgb(14%,41%,60%); stroke-linecap: butt; stroke-width: 1.4;"/>
+			<polygon points="380 277, 374 280, 374 274" style="stroke: rgb(14%,41%,60%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,41%,60%); fill-rule: evenodd;"/>
+			<path d="M 440,247 L 335,220 Z" style="stroke: rgb(14%,41%,60%); stroke-linecap: butt; stroke-width: 1.4;"/>
+			<polygon points="335 220, 341.5581 218.5888, 340.0638 224.3997" style="stroke: rgb(14%,41%,60%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,41%,60%); fill-rule: evenodd;"/>
+			<rect x="105" y="168" width="310" height="52" rx="7" ry="7" style="stroke: rgb(3%,48%,48%); stroke-linecap: butt; stroke-width: 1.1; fill: rgb(90%,95%,96%); fill-rule: evenodd;"/>
+			<text x="185.0888" y="198.368" style="font-family: 'Noto Sans JP', 'Hiragino Sans', Meiryo, sans-serif; font-weight: 700; font-size: 11.2px;fill: rgb(14%,20%,27%); stroke:none;" transform="translate(0,396) scale(1,-1)">Pの差分ゼロ・outer feeを1回</text>
+			<text x="189.692" y="181.56799999999998" style="font-family: 'Noto Sans JP', 'Hiragino Sans', Meiryo, sans-serif; font-weight: 700; font-size: 11.2px;fill: rgb(14%,20%,27%); stroke:none;" transform="translate(0,363) scale(1,-1)">1取引として採用・注文消費</text>
+			<path d="M 205,168 L 130,132 Z" style="stroke: rgb(67%,36%,13%); stroke-linecap: butt; stroke-width: 1.4; stroke-dasharray: 4, 3;"/>
+			<polygon points="130 132, 136.7073 131.8918, 134.1109 137.301" style="stroke: rgb(67%,36%,13%); stroke-linecap: butt; stroke-width: 1; fill: rgb(67%,36%,13%); fill-rule: evenodd;"/>
+			<path d="M 315,168 L 390,132 Z" style="stroke: rgb(39%,45%,54%); stroke-linecap: butt; stroke-width: 1.4; stroke-dasharray: 4, 3;"/>
+			<polygon points="390 132, 385.8891 137.301, 383.2927 131.8918" style="stroke: rgb(39%,45%,54%); stroke-linecap: butt; stroke-width: 1; fill: rgb(39%,45%,54%); fill-rule: evenodd;"/>
+			<rect x="20" y="70" width="220" height="62" rx="7" ry="7" style="stroke: rgb(67%,36%,13%); stroke-linecap: butt; stroke-width: 1.1; fill: rgb(98%,95%,92%); fill-rule: evenodd;"/>
+			<text x="77.739" y="105.29" style="font-family: 'Noto Sans JP', 'Hiragino Sans', Meiryo, sans-serif; font-size: 11px;fill: rgb(14%,20%,27%); stroke:none;" transform="translate(0,210) scale(1,-1)">途中失敗: 全体を拒否</text>
+			<text x="75.0" y="88.79" style="font-family: 'Noto Sans JP', 'Hiragino Sans', Meiryo, sans-serif; font-size: 11px;fill: rgb(14%,20%,27%); stroke:none;" transform="translate(0,177) scale(1,-1)">資産・消費を残さない</text>
+			<rect x="280" y="70" width="220" height="62" rx="7" ry="7" style="stroke: rgb(39%,45%,54%); stroke-linecap: butt; stroke-width: 1.1; fill: rgb(95%,96%,98%); fill-rule: evenodd;"/>
+			<text x="338.0525" y="105.29" style="font-family: 'Noto Sans JP', 'Hiragino Sans', Meiryo, sans-serif; font-size: 11px;fill: rgb(14%,20%,27%); stroke:none;" transform="translate(0,210) scale(1,-1)">reorg: 全処理をundo</text>
+			<text x="329.522" y="88.79" style="font-family: 'Noto Sans JP', 'Hiragino Sans', Meiryo, sans-serif; font-size: 11px;fill: rgb(14%,20%,27%); stroke:none;" transform="translate(0,177) scale(1,-1)">legacy消費も一緒に戻す</text>
+			<text x="128.28" y="38" style="font-family: 'Noto Sans JP', 'Hiragino Sans', Meiryo, sans-serif; font-weight: 700; font-size: 10px;fill: rgb(9%,19%,30%); stroke:none;" transform="translate(0,76) scale(1,-1)">funding / sweepは単独で有効な署名済みTransferにしない</text>
+			<text x="127.0712" y="18" style="font-family: 'Noto Sans JP', 'Hiragino Sans', Meiryo, sans-serif; font-size: 9.7px;fill: rgb(39%,45%,54%); stroke:none;" transform="translate(0,36) scale(1,-1)">受信した無効blockは全体拒否 / 候補作成時は外側1件をundo</text>
+		</g>
+	</g>
+</svg>

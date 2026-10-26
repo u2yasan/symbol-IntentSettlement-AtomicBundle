@@ -1,0 +1,21 @@
+flowchart TD
+    Maker["メイカー: 既存 Aggregate 注文へ署名"] --> Order["固定形の売却・受取・tip"]
+    Order --> Builder["ソルバー: Bundle を組み立て"]
+    Inventory["在庫鍵: 外側全体を署名"] --> Auth["外側認証と canonical root"]
+    Builder --> Auth
+    PublicP["P 鍵: legacy と outer へ別々に連署"] --> Auth
+    Auth --> Validate["完全検証・期限・状態制限"]
+    Validate --> Shared["共有 HashCache: legacy の消費を確認"]
+    Shared --> Funding["funding: 在庫から P へ"]
+    Funding --> Legacy["legacy 注文: native 規則で交換"]
+    Legacy --> Sweep["sweep: give と tip の増分を在庫へ"]
+    Sweep --> Check["P の差分ゼロ・outer fee 一回"]
+    Check --> Commit["一取引として採用・注文消費"]
+    Validate -->|"失敗"| Reject["全体拒否: 資産・消費を残さない"]
+    Shared -->|"重複"| Reject
+    Funding -->|"失敗"| Reject
+    Legacy -->|"失敗"| Reject
+    Sweep -->|"失敗"| Reject
+    Check -->|"失敗"| Reject
+    Commit --> Reorg["reorg: 全処理と消費を一緒に undo"]
+    Reorg --> Shared

@@ -1,0 +1,64 @@
+{
+  "schema": "symbol-intent-order-v1-design-fixtures",
+  "purpose": "canonical_encoding_and_detached_signature_only",
+  "warning": "PUBLIC DISPOSABLE TEST KEY; NOT A LIVE NETWORK FIXTURE",
+  "public_test_private_seed_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+  "network_generation_hash_seed_hex": "1111111111111111111111111111111111111111111111111111111111111111",
+  "domain_utf8": "SYMBOL_INTENT_ORDER_V1",
+  "domain_hash_sha3_256_hex": "f21d0fa4232a3a3d5e0b06427c72a23336e9f4ae6c2e56fe640b54bf2782a16c",
+  "signature_mode": "Ed25519 over full 200 bytes; no prehash; no extra seed prepend",
+  "vectors": [
+    {
+      "name": "basic_exact_exchange",
+      "fields": {
+        "version": 1,
+        "network": 152,
+        "flags": 0,
+        "maker_public_key_hex": "03a107bff3ce10be1d70dd18e74bc09967e4d6309ba50d5f1ddc8664125531b8",
+        "recipient_address_hex": "9820d015e1a27172ab1eb5c805d4d1d2de16bd9626e67910",
+        "recipient_address_base32": "TAQNAFPBUJYXFKY6WXEALVGR2LPBNPMWE3THSEA",
+        "give_mosaic_id_hex": "0123456789abcdef",
+        "give_amount_decimal": "50",
+        "get_mosaic_id_hex": "023456789abcdef0",
+        "get_amount_decimal": "1000000000",
+        "valid_until_network_milliseconds_decimal": "7200000",
+        "nonce_hex": "202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f"
+      },
+      "canonical_order_bytes": 136,
+      "canonical_order_hex": "019800000000000003a107bff3ce10be1d70dd18e74bc09967e4d6309ba50d5f1ddc8664125531b89820d015e1a27172ab1eb5c805d4d1d2de16bd9626e67910efcdab89674523013200000000000000f0debc9a7856340200ca9a3b0000000000dd6d0000000000202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+      "signing_message_bytes": 200,
+      "signing_message_hex": "f21d0fa4232a3a3d5e0b06427c72a23336e9f4ae6c2e56fe640b54bf2782a16c1111111111111111111111111111111111111111111111111111111111111111019800000000000003a107bff3ce10be1d70dd18e74bc09967e4d6309ba50d5f1ddc8664125531b89820d015e1a27172ab1eb5c805d4d1d2de16bd9626e67910efcdab89674523013200000000000000f0debc9a7856340200ca9a3b0000000000dd6d0000000000202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+      "order_id_sha3_256_hex": "eb2f74db086fe6bf5df864a3ee9cf282fb4459467c78209212171a4dd2247cb2",
+      "maker_signature_ed25519_hex": "39e580403f99b2736335ce36e0fdbe3af3b515eb75f78408bf58ebf789dc7485dbf45ba2e8a27e4b9ab1207c81934c71f972ba1ca0a10df14736181995b7ac01",
+      "cryptography_signature_check": "PASS",
+      "native_catapult_cross_check": "NOT_RUN",
+      "on_chain_acceptance": "NOT_RUN"
+    },
+    {
+      "name": "u64_precision_encoding_only",
+      "fields": {
+        "version": 1,
+        "network": 152,
+        "flags": 0,
+        "maker_public_key_hex": "03a107bff3ce10be1d70dd18e74bc09967e4d6309ba50d5f1ddc8664125531b8",
+        "recipient_address_hex": "9820d015e1a27172ab1eb5c805d4d1d2de16bd9626e67910",
+        "recipient_address_base32": "TAQNAFPBUJYXFKY6WXEALVGR2LPBNPMWE3THSEA",
+        "give_mosaic_id_hex": "0123456789abcdef",
+        "give_amount_decimal": "9007199254740993",
+        "get_mosaic_id_hex": "023456789abcdef0",
+        "get_amount_decimal": "18446744073709551615",
+        "valid_until_network_milliseconds_decimal": "7200000",
+        "nonce_hex": "202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f"
+      },
+      "canonical_order_bytes": 136,
+      "canonical_order_hex": "019800000000000003a107bff3ce10be1d70dd18e74bc09967e4d6309ba50d5f1ddc8664125531b89820d015e1a27172ab1eb5c805d4d1d2de16bd9626e67910efcdab89674523010100000000002000f0debc9a78563402ffffffffffffffff00dd6d0000000000202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+      "signing_message_bytes": 200,
+      "signing_message_hex": "f21d0fa4232a3a3d5e0b06427c72a23336e9f4ae6c2e56fe640b54bf2782a16c1111111111111111111111111111111111111111111111111111111111111111019800000000000003a107bff3ce10be1d70dd18e74bc09967e4d6309ba50d5f1ddc8664125531b89820d015e1a27172ab1eb5c805d4d1d2de16bd9626e67910efcdab89674523010100000000002000f0debc9a78563402ffffffffffffffff00dd6d0000000000202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+      "order_id_sha3_256_hex": "02e03d54d9f982669fca2e2e27edaf4d81701bfdc6ceffe308ddd421bd7acf94",
+      "maker_signature_ed25519_hex": "51228fae93d9bff72ca23257e31a0c775bb73cb19e485f78c825bacda44b26c584effee76b3fd95c4b0fd86d2b086d0cb15bc4e3c565b5f0e57416ab9b5a8a04",
+      "cryptography_signature_check": "PASS",
+      "native_catapult_cross_check": "NOT_RUN",
+      "on_chain_acceptance": "NOT_RUN"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+flowchart TD
+    M["メイカーが条件へ署名"] --> O["公開注文: 136Bと署名64B"]
+    O --> S["ソルバーが外側全体へ署名"]
+    S --> T["IntentSettlement: 328B"]
+    O --> C["メイカーが取消へ署名"]
+    C --> CT["IntentCancel: 264B"]
+
+    subgraph N["全ノードで同じ合意規則を実行"]
+        T --> V["署名・期限・未消費・制限を検証"]
+        CT --> CV["メイカー一致・期限・未消費を検証"]
+        V --> A["1取引内で両脚を移転"]
+        A --> F["FILLEDを記録"]
+        CV --> X["CANCELLEDを記録"]
+        F --> K["Merkle対応の消費cache"]
+        X --> K
+        A --> B["残高とreceiptを確定"]
+    end
+
+    K --> R["3ノードのstateHash・receipt hash一致"]
+    B --> R
+    V -. "検証失敗" .-> U["候補はundo・無効受信blockは全体拒否"]
+    A -. "途中失敗" .-> U
+    R -. "非finalizedのreorg" .-> W["両脚・消費状態・receiptをrollback"]
